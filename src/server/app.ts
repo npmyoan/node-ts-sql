@@ -3,8 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import 'express-compression';
-import helloRouter from './routes/HelloRouter';
-import { LogError } from './utils/looger';
+import helloRouter from '../routes/HelloRouter';
+import { LogError } from '../utils/looger';
 
 //Initializations
 const app: Application = express();
@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api', helloRouter);
+
+app.use('/', (req: Request, res: Response) => {
+  res.redirect('/api');
+});
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   LogError(err.message);

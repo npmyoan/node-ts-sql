@@ -10,10 +10,8 @@ router.route('/').get(async (req: Request, res: Response) => {
   LogInfo(`Query params: ${name}`);
 
   const message = await new HelloController().getMessage(name as string);
-  const user = await User.create({ name: 'Yoan', email: 'yoan@yoan.com', password: '123456' });
   res.json({
     message,
-    user,
   });
 });
 
