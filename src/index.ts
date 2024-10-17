@@ -1,6 +1,7 @@
 import app from './server/app';
 import dotenv from 'dotenv';
 import 'module-alias/register';
+import 'express-async-errors';
 
 import { connectDb } from './database/sequelize';
 
