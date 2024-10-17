@@ -1,5 +1,5 @@
 import { Column, Model, Table, DataType, AutoIncrement, AllowNull } from 'sequelize-typescript';
-import { IUser } from '@/domain/user.entity';
+import { IUser } from '@/domain/entities/user.entity';
 
 @Table({
   timestamps: true,

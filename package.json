@@ -7,6 +7,7 @@
   "description": "Proyect to change sql",
   "author": "Yoan Estrada Balnco",
   "scripts": {
+    "swagger": "tsoa spec",
     "dev": "tsnd --respawn src/index.ts",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/index.js",
