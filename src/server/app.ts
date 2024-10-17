@@ -13,7 +13,9 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
+//Routes
 app.use('/api', helloRouter);
 
 app.use('/', (req: Request, res: Response) => {
